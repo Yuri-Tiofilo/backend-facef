@@ -49,7 +49,7 @@ class UserController {
     return res.json(users);
   }
 
-  async create(req: Request, res: Response): Promise<Response> {
+  async store(req: Request, res: Response): Promise<Response> {
     const { name, email, password } = req.body;
 
     const userExist = await User.findOne({
