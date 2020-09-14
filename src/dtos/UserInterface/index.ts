@@ -10,4 +10,6 @@ export interface IRegisterUser extends Document {
   name: string;
   email: string;
   password: string;
+  gender: string;
+  cpf: string;
 }

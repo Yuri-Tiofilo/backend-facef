@@ -7,6 +7,8 @@ const UserSchema = new Schema({
   name: String,
   email: String,
   password: String,
+  gender: String,
+  cpf: String,
 });
 
 export default model<IRegisterUser>('User', UserSchema);

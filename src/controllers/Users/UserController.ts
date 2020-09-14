@@ -50,7 +50,7 @@ class UserController {
   }
 
   async store(req: Request, res: Response): Promise<Response> {
-    const { name, email, password } = req.body;
+    const { name, email, password, cpf, gender } = req.body;
 
     const userExist = await User.findOne({
       email,
@@ -65,6 +65,8 @@ class UserController {
       name,
       email,
       password,
+      cpf,
+      gender,
     } as IRegisterUser);
     return res.json(newUser);
   }
