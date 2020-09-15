@@ -2,6 +2,7 @@ import { Router } from 'express';
 import UserController from './controllers/Users/UserController';
 import ProviderController from './controllers/Providers/ProviderController';
 import SessionController from './controllers/auth/SessionController';
+import ServiceController from './controllers/servicesController/ServiceController';
 
 const routes = Router();
 
@@ -20,5 +21,9 @@ routes.delete('/provider/:id', ProviderController.delete);
 routes.put('/provider/:id', ProviderController.update);
 
 // services
+routes.post('/services', ServiceController.store);
+routes.get('/services', ServiceController.index);
+routes.delete('/services/:id', ServiceController.delete);
+routes.put('/services/:id', ServiceController.update);
 
 export default routes;
