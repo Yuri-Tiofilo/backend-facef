@@ -70,6 +70,15 @@ class UserController {
     } as IRegisterUser);
     return res.json(newUser);
   }
+
+  async show(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params;
+    const user = await User.findOne({
+      id,
+    });
+
+    return res.json(user);
+  }
 }
 
 export default new UserController();

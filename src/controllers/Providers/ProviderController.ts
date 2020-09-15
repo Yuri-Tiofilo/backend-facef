@@ -117,6 +117,15 @@ class ProviderController {
 
     return res.json(providers);
   }
+
+  async show(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params;
+    const provider = await Provider.findOne({
+      id,
+    });
+
+    return res.json(provider);
+  }
 }
 
 export default new ProviderController();

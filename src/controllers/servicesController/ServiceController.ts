@@ -69,6 +69,15 @@ class ServiceController {
 
     return res.json(services);
   }
+
+  async show(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params;
+    const service = await Service.findOne({
+      id,
+    });
+
+    return res.json(service);
+  }
 }
 
 export default new ServiceController();

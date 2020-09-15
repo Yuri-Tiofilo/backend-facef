@@ -13,17 +13,20 @@ routes.post('/users', UserController.store);
 routes.get('/users', UserController.read);
 routes.delete('/users/:id', UserController.delete);
 routes.put('/users/:id', UserController.update);
+routes.get('/users/:id', UserController.show);
 
 // ProviderController
 routes.post('/provider', ProviderController.store);
 routes.get('/provider', ProviderController.index);
 routes.delete('/provider/:id', ProviderController.delete);
 routes.put('/provider/:id', ProviderController.update);
+routes.get('/provider/:id', ProviderController.show);
 
 // services
 routes.post('/services', ServiceController.store);
 routes.get('/services', ServiceController.index);
 routes.delete('/services/:id', ServiceController.delete);
 routes.put('/services/:id', ServiceController.update);
+routes.get('/services/:id', ServiceController.show);
 
 export default routes;
