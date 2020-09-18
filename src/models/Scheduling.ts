@@ -9,7 +9,7 @@ const schedulingSchema = new Schema({
   scheduled_date: { type: String, required: true },
   appointment: { type: String, required: true },
   description: { type: String, required: true },
-  canceled: { type: String, required: true },
+  canceled: { type: Boolean, required: false },
 });
 
 export default model<IScheduling>('Files', schedulingSchema);

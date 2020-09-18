@@ -14,7 +14,6 @@ class SchedulingController {
       scheduled_date,
       appointment,
       description,
-      canceled,
     } = req.body;
 
     const newScheduling = await Scheduling.create({
@@ -25,7 +24,7 @@ class SchedulingController {
       scheduled_date,
       appointment,
       description,
-      canceled,
+      canceled: false,
     } as IScheduling);
 
     return res.json(newScheduling);

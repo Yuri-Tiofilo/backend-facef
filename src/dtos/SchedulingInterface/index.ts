@@ -8,5 +8,5 @@ export interface IScheduling extends Document {
   scheduled_date: string;
   appointment: string;
   description: string;
-  canceled: string;
+  canceled: boolean;
 }

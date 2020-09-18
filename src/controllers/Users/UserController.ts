@@ -10,20 +10,21 @@ class UserController {
     const { id } = req.params;
 
     const { email } = req.body;
+    console.log(email);
+    console.log(id);
 
-    const emailExist = await User.findOne({
-      email,
-    });
+    // const emailExist = await User.findOne({
+    //   email,
+    // });
 
-    if (emailExist) {
-      return res.status(400).json({ error: 'Email exist try other' });
-    }
+    // if (emailExist) {
+    //   return res.status(400).json({ error: 'Email exist try other' });
+    // }
 
-    const updateUser = User.findByIdAndUpdate(id, req.body);
+    // const updateUser = User.findByIdAndUpdate(id, req.body);
 
     return res.json({
       message: 'User atualizado',
-      user: updateUser,
     });
   }
 
