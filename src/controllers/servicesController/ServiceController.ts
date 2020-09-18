@@ -59,7 +59,7 @@ class ServiceController {
     const updateService = Service.findByIdAndUpdate(id, req.body);
 
     return res.json({
-      message: 'User atualizado',
+      message: 'service atualizado',
       user: updateService,
     });
   }

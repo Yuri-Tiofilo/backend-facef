@@ -3,6 +3,7 @@ import UserController from './controllers/Users/UserController';
 import ProviderController from './controllers/Providers/ProviderController';
 import SessionController from './controllers/auth/SessionController';
 import ServiceController from './controllers/servicesController/ServiceController';
+import SchedulingController from './controllers/SchedulingController/SchedulingController';
 
 const routes = Router();
 
@@ -28,5 +29,7 @@ routes.get('/services', ServiceController.index);
 routes.delete('/services/:id', ServiceController.delete);
 routes.put('/services/:id', ServiceController.update);
 routes.get('/services/:id', ServiceController.show);
+
+routes.get('/scheduling', SchedulingController.index);
 
 export default routes;
