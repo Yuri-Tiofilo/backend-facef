@@ -42,7 +42,7 @@ class SchedulingController {
     const updateService = Scheduling.findByIdAndUpdate(id, req.body);
 
     return res.json({
-      message: 'Scheduling atualizado',
+      message: 'Scheduling updated successfully',
       user: updateService,
     });
   }

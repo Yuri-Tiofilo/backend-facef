@@ -104,19 +104,12 @@ class ProviderController {
       return res.status(400).json({ error: 'Email exist try other' });
     }
 
-    const updateProvider = Provider.updateOne(
-      { id },
-      {
-        name: 'Yuri',
-      },
-    );
+    const updateProvider = Provider.findByIdAndUpdate(id, req.body);
 
-    const teste = await Provider.findOne({ id });
-
-    console.log(updateProvider);
-    console.log(teste);
-
-    return res.json({ message: 'teste' });
+    return res.json({
+      message: 'Provider updated successfully',
+      user: updateProvider,
+    });
   }
 
   async index(req: Request, res: Response): Promise<Response> {
