@@ -8,22 +8,22 @@ import Scheduling from '../../models/Scheduling';
 class SchedulingController {
   async store(req: Request, res: Response): Promise<Response> {
     const {
-      id_user,
-      id_provider,
-      id_service,
+      name_user,
+      name_provider,
+      name_service,
       scheduled_date,
       appointment,
-      description,
+      obsertation,
     } = req.body;
 
     const newScheduling = await Scheduling.create({
       id: uuidv4(),
-      id_user,
-      id_provider,
-      id_service,
+      name_user,
+      name_provider,
+      name_service,
       scheduled_date,
       appointment,
-      description,
+      obsertation,
       canceled: false,
     } as IScheduling);
 
