@@ -13,7 +13,7 @@ class SchedulingController {
       name_service,
       scheduled_date,
       appointment,
-      obsertation,
+      observation,
     } = req.body;
 
     const newScheduling = await Scheduling.create({
@@ -23,7 +23,7 @@ class SchedulingController {
       name_service,
       scheduled_date,
       appointment,
-      obsertation,
+      observation,
       canceled: false,
     } as IScheduling);
 
