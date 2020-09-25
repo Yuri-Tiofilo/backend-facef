@@ -46,21 +46,10 @@ class ServiceController {
   async update(req: Request, res: Response): Promise<Response> {
     const { id } = req.params;
 
-    const { name } = req.body;
-
-    const serviceExist = await Service.findOne({
-      name,
-    });
-
-    if (serviceExist) {
-      return res.status(400).json({ error: 'Service exist try other' });
-    }
-
-    const updateService = Service.findByIdAndUpdate(id, req.body);
+    await Service.findByIdAndUpdate(id, req.body);
 
     return res.json({
       message: 'Service updated successfully',
-      user: updateService,
     });
   }
 

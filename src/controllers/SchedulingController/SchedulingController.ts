@@ -39,11 +39,10 @@ class SchedulingController {
   async update(req: Request, res: Response): Promise<Response> {
     const { id } = req.params;
 
-    const updateService = Scheduling.findByIdAndUpdate(id, req.body);
+    await Scheduling.findByIdAndUpdate(id, req.body);
 
     return res.json({
       message: 'Scheduling updated successfully',
-      user: updateService,
     });
   }
 

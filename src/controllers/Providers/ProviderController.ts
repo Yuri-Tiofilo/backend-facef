@@ -94,21 +94,11 @@ class ProviderController {
   async update(req: Request, res: Response): Promise<Response> {
     const { id } = req.params;
 
-    const { email } = req.body;
-
-    const emailExist = await Provider.findOne({
-      email,
-    });
-
-    if (emailExist) {
-      return res.status(400).json({ error: 'Email exist try other' });
-    }
-
-    const updateProvider = Provider.findByIdAndUpdate(id, req.body);
+    await Provider.findByIdAndUpdate(id, req.body);
 
     return res.json({
       message: 'Provider updated successfully',
-      user: updateProvider,
+      // user: updateProvider,
     });
   }
 

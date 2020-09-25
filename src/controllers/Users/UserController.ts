@@ -9,21 +9,10 @@ class UserController {
   async update(req: Request, res: Response): Promise<Response> {
     const { id } = req.params;
 
-    const { email } = req.body;
-
-    const emailExist = await User.findOne({
-      email,
-    });
-
-    if (emailExist) {
-      return res.status(400).json({ error: 'Email exist try other' });
-    }
-
-    const updateUser = await User.findByIdAndUpdate(id, req.body);
+    await User.findByIdAndUpdate(id, req.body);
 
     return res.json({
       message: 'User updated successfully',
-      updateUser,
     });
   }
 
